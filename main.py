@@ -9,12 +9,18 @@ def main():
         if option == 1:
             given_password = str(input("Please enter your password to encode: "))
             encoded_password = encode(given_password)
-            print('Your password has been encoded and stored!\n')
-            # Encode
+
+            if encoded_password == False:
+                print("Invalid password!\n")
+
+            else:
+                print('Your password has been encoded and stored!\n')
+
+
         elif option == 2:
             # Decode password
             decoded_password = decode(encoded_password)
-            print(f"The encoded password is {encoded_password}, and the original password is 12345555.{decoded_password}\n")
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}\n.")
             print('')
         else:
             return
